@@ -16,4 +16,4 @@
 # boot goes straight into the most recently played save instead of
 # stopping at the Main Menu. It lives in the debug options global, next
 # to the other boot flags (SkipIntro, SkipLogos, FastLoad).
-GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoLastSave	False	True
+GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoLastSave	false	true
