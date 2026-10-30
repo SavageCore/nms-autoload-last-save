@@ -12,8 +12,11 @@
 # value can never be patched without also being checked, and the two can
 # never drift apart.
 #
-# BootDirectlyIntoLastSave is the game's own startup shortcut: when true,
-# boot goes straight into the most recently played save instead of
-# stopping at the Main Menu. It lives in the debug options global, next
-# to the other boot flags (SkipIntro, SkipLogos, FastLoad).
-GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoLastSave	false	true
+# BootDirectlyIntoSaveSlot is the sibling shortcut: boot into one slot by
+# index instead of stopping at the Main Menu. Vanilla ships -1 (no slot).
+# With slot sorting on (the vanilla DisableSaveSlotSorting=false), the
+# most recent save is slot 0. BootDirectlyIntoLastSave (the bool form of
+# this feature) is ignored by the Forsaken release build - verified over
+# two launches with the value provably deployed - so this mod drives the
+# slot form instead.
+GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoSaveSlot	-1	0
