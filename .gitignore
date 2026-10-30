@@ -1,0 +1,8 @@
+build/
+dist/
+__pycache__/
+assets/header-*.jpg
+assets/gallery-*.jpg
+# Game binaries are build outputs, never sources. The patch lives in
+# src/patches.tsv and ships as loose EXML.
+*.MBIN

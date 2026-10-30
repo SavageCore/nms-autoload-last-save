@@ -1,0 +1,19 @@
+# The value this mod patches, one line per property:
+#
+#   FILE<TAB>PROPERTY<TAB>BASE<TAB>VALUE
+#
+# FILE is the MBIN path the game uses, relative to the data root.
+# PROPERTY is the field to rewrite.
+# BASE is the value the game ships today.
+# VALUE is the value the mod puts there.
+#
+# The render step turns this table into the Lua patch block and into the
+# expected values that make verify checks the built EXML against, so a
+# value can never be patched without also being checked, and the two can
+# never drift apart.
+#
+# BootDirectlyIntoLastSave is the game's own startup shortcut: when true,
+# boot goes straight into the most recently played save instead of
+# stopping at the Main Menu. It lives in the debug options global, next
+# to the other boot flags (SkipIntro, SkipLogos, FastLoad).
+GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoLastSave	False	True

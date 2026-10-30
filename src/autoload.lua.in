@@ -1,0 +1,37 @@
+-- Autoload Last Save
+-- RENDERED FILE - do not edit; edit src/autoload.lua.in and src/patches.tsv
+-- and run make release.
+--
+-- Updated by SavageCore
+--
+-- What it does: sets the game's own BootDirectlyIntoLastSave option, so
+-- boot goes straight into the most recently played save instead of
+-- stopping at the Main Menu.
+--
+-- The patched value is in src/patches.tsv, which also drives the verify
+-- step, so a value can never be patched without also being checked.
+-- MXML_CHANGE_TABLE is a LIST of change blocks even when there is only
+-- one, so the block list is wrapped in an outer table. Handing AMUMSS a
+-- bare block instead makes it report "MXML_CHANGE_TABLE does not contain
+-- any usable TABLE", make 0 changes, and ship nothing.
+
+local ModName     = "Autoload Last Save"
+local ModAuthor   = "SavageCore"
+local GameVersion = "v7.10"
+
+local MbinChangeTable = {
+@MBINBLOCK@
+}
+
+NMS_MOD_DEFINITION_CONTAINER = {
+    ["MOD_FILENAME"]    = ModName..".pak",
+    ["MOD_DESCRIPTION"] = "Boots directly into the most recently played save.",
+    ["MOD_AUTHOR"]      = ModAuthor,
+    ["NMS_VERSION"]     = GameVersion,
+    ["MODIFICATIONS"]   =
+    {
+        {
+            ["MBIN_CHANGE_TABLE"] = MbinChangeTable,
+        },
+    },
+}
