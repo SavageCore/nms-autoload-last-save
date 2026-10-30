@@ -15,8 +15,7 @@
 # BootDirectlyIntoSaveSlot is the sibling shortcut: boot into one slot by
 # index instead of stopping at the Main Menu. Vanilla ships -1 (no slot).
 # With slot sorting on (the vanilla DisableSaveSlotSorting=false), the
-# most recent save is slot 1. BootDirectlyIntoLastSave (the bool form of
-# this feature) is ignored by the Forsaken release build - verified over
-# two launches with the value provably deployed - so this mod drives the
-# slot form instead.
-GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoSaveSlot	-1	1
+# BootDirectlyIntoLastSave, take two: the slot form (SaveSlot 0 and 1)
+# both land in the menu, so retest the bool form alone in a profile
+# with no other GCDEBUGOPTIONS mods before calling it dead.
+GLOBALS/GCDEBUGOPTIONS.GLOBAL.MBIN	BootDirectlyIntoLastSave	false	true
