@@ -4,6 +4,17 @@ Boots directly into your most recently played save instead of stopping
 at the Main Menu. Built natively on Linux with the
 [AMUMSS Linux port](https://github.com/SavageCore/AMUMSS/tree/feat/linux-support).
 
+> Status: parked. The game's own `BootDirectlyIntoLastSave` /
+> `BootDirectlyIntoSaveSlot` options do not fire in the Forsaken release
+> build - verified over five launches with the values provably deployed
+> (clean profile, no conflicting mods). Binary analysis finds no live
+> code on the boot path that reads these flags: the boot state machine
+> (PreSetupUI through Complete, with the warning gates the skip-mods
+> patch) goes straight from BootReality/SetupFrontend into the menu.
+> What is needed is a Nozavolochen patch on the title-screen Continue
+> path, which is not yet located. See `src/patches.tsv` for the approach
+> that was ruled out.
+
 ## What it does
 
 No Man's Sky normally stops at the Main Menu after the title screens.
